@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $statusValid = \DB::table('incoming_messages')->where('status','valid')->get();
+    $statusInvalid = \DB::table('incoming_messages')->where('status','invalid')->get();
+    $statusOther = \DB::table('incoming_messages')->where('status','!=','invalid')->where('status','!=','valid')->get();
+    
+    return view('welcome',['statusValid' => $statusValid,'statusInvalid' => $statusInvalid ,'statusOther' => $statusOther]);
+
+    // return view('welcome');
 });
