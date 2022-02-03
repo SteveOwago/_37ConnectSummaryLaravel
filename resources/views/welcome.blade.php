@@ -21,35 +21,40 @@
 <body>
     <div class="container" syle="height:100%;">
         <div class="col-md-10 offset-1">
-            <div class="panel panel-success">
-                <div class="panel-heading text-center">
-                    <h4>Incoming Messages Summary</h4>
-                </div>
-                <div class="panel-body mt-5">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <canvas id="myChart" height="300"></canvas>
+            <div class="row">
+                <div class="panel panel-success">
+                    <div class="panel-heading text-center">
+                        <h4>Incoming Messages Summary</h4>
+                    </div>
+                    <div class="panel-body mt-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas id="myChart" height="300"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <canvas id="myChart-pie"></canvas>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas id="myChart-pie"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <canvas id="myChart-doughnut"></canvas>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas id="myChart-doughnut"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row mt-3">
+                <a class="btn btn-primary" href="/admin">View Admin Dashboard</a>
             </div>
         </div>
         <!-- Optional JavaScript -->

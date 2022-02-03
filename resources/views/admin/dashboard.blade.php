@@ -131,7 +131,7 @@
                     <div class="card-header-tab card-header-tab-animation card-header">
                         <div class="card-header-title">
                             <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                            Sales Report
+                            Incomming Messages Tally
                         </div>
                         <ul class="nav">
                             <li class="nav-item"><a href="javascript:void(0);"
