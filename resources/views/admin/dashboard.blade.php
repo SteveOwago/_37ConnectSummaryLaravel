@@ -10,9 +10,8 @@
                         <i class="pe-7s-car icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Analytics Dashboard
-                        <div class="page-title-subheading">This is an example dashboard created using
-                            build-in elements and components.
+                    <div>{{ env('APP_NAME')}} Dashboard
+                        <div class="page-title-subheading"> This is the Backend UI for {{ env('APP_NAME')}}
                         </div>
                     </div>
                 </div>
@@ -77,11 +76,11 @@
                 <div class="card mb-3 widget-content bg-midnight-bloom">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
-                            <div class="widget-heading">Total Orders</div>
-                            <div class="widget-subheading">Last year expenses</div>
+                            <div class="widget-heading">Total Participants</div>
+                            <div class="widget-subheading">Participants Count</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>1896</span></div>
+                            <div class="widget-numbers text-white"><span>{{count($participants)}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -90,11 +89,11 @@
                 <div class="card mb-3 widget-content bg-arielle-smile">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
-                            <div class="widget-heading">Clients</div>
-                            <div class="widget-subheading">Total Clients Profit</div>
+                            <div class="widget-heading">Regions</div>
+                            <div class="widget-subheading">Total Regions</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>$ 568</span></div>
+                            <div class="widget-numbers text-white"><span>{{count($regions)}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -103,11 +102,11 @@
                 <div class="card mb-3 widget-content bg-grow-early">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
-                            <div class="widget-heading">Followers</div>
-                            <div class="widget-subheading">People Interested</div>
+                            <div class="widget-heading">Outgoing Messages</div>
+                            <div class="widget-subheading">Messages Sent</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>46%</span></div>
+                            <div class="widget-numbers text-white"><span>{{count($outgoingMessages)}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -148,7 +147,7 @@
                                     <div class="widget-chat-wrapper-outer">
                                         <div
                                             class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                            <canvas id="canvas"></canvas>
+                                            <canvas id="myChart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -295,9 +294,9 @@
                     <div class="card-header-tab card-header">
                         <div class="card-header-title">
                             <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                            Bandwidth Reports
+                            Incomming Messages Summary
                         </div>
-                        <div class="btn-actions-pane-right">
+                        <!--<div class="btn-actions-pane-right">
                             <div class="nav">
                                 <a href="javascript:void(0);"
                                     class="border-0 btn-pill btn-wide btn-transition active btn btn-outline-alternate">Tab
@@ -306,13 +305,13 @@
                                     class="ml-1 btn-pill btn-wide border-0 btn-transition  btn btn-outline-alternate second-tab-toggle-alt">Tab
                                     2</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="tab-eg-55">
                             <div class="widget-chart p-3">
                                 <div style="height: 350px">
-                                    <canvas id="line-chart"></canvas>
+                                    <canvas id="myChart-doughnut" height="330"></canvas>
                                 </div>
                                 <div class="widget-chart-content text-center mt-5">
                                     <div class="widget-description mt-0 text-warning">
@@ -783,4 +782,72 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = [
+        'Valid',
+        'Invalid',
+        'Other'
+    ];
+
+    /* async function fetchData1JSON() {
+        const response = await fetch(`https://steveowago.me/includes/data.json`);
+        const data1 = await response.json();
+        return data1;
+    }
+
+    fetchData1JSON().then(data1 => {
+        console.log(data1)
+    }); */
+
+    const statusValid = {{count($statusValid)}}
+
+    const statusInvalid = {{count($statusInvalid)}}
+
+    const statusOther = {{count($statusOther)}}
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Dundasprints - Incoming messages summary',
+            backgroundColor: ['rgb(106, 255, 51)','rgb(255, 66, 51)','rgb(255, 99, 132)'],
+            borderColor: ['rgb(106, 255, 51)', 'rgb(255,66,51)', 'rgb(255, 189, 51 )'],
+            data: [statusValid, statusInvalid, statusOther],
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+    const configDoughnut = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        }
+    };
+    const configPie = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+     const myChartPie = new Chart(
+        document.getElementById('myChart-pie'),
+        configPie
+    );
+     const myChartDoughnut = new Chart(
+        document.getElementById('myChart-doughnut'),
+        configDoughnut
+    );
+</script>
 @endsection

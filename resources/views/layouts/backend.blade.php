@@ -22,6 +22,7 @@
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
     <link href="{{ asset('backend/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 </head>
 
 <body>
@@ -34,6 +35,7 @@
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
+    @yield('scripts')
     <script type="text/javascript" src="{{asset('backend/js/main.js')}}"></script>
 </body>
 
