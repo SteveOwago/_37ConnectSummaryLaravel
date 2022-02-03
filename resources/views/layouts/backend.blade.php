@@ -23,6 +23,9 @@
     -->
     <link href="{{ asset('backend/css/main.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('backend/font-awesome5-web/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('backend/Icon-font-7-stroke/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
+    <link rel="stylesheet" href="{{ asset('backend/Icon-font-7-stroke/pe-icon-7-stroke/css/helper.css')}}">
 </head>
 
 <body>

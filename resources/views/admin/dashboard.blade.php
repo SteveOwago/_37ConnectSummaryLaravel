@@ -7,7 +7,7 @@
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
                     <div class="page-title-icon">
-                        <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                        <i class="pe-7s-graph3 on pe-7s-monitor icon-gradient bg-mean-fruit">
                         </i>
                     </div>
                     <div>{{ env('APP_NAME')}} Dashboard
@@ -24,7 +24,7 @@
                         <button type="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
                             <span class="btn-icon-wrapper pr-2 opacity-7">
-                                <i class="fa fa-business-time fa-w-20"></i>
+                                <i class="fa fa-building fa-w-20"></i>
                             </span>
                             Buttons
                         </button>
