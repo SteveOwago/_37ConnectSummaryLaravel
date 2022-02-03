@@ -16,6 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link  href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -54,7 +55,7 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <a class="btn btn-primary" href="/admin">View Admin Dashboard</a>
+                <a class="btn btn-primary" href="/admin"> <i class="fa fa-cogs"></i> View Admin Dashboard</a>
             </div>
         </div>
         <!-- Optional JavaScript -->
@@ -83,18 +84,24 @@
                 console.log(data1)
             }); */
 
-            const statusValid = {{count($statusValid)}}
+            const statusValid = {{ count($statusValid) }}
 
-            const statusInvalid = {{count($statusInvalid)}}
+            const statusInvalid = {{ count($statusInvalid) }}
 
-            const statusOther = {{count($statusOther)}}
+            const statusOther = {{ count($statusOther) }}
+
+            const setBg = () => {
+                const randomColor ="#" + Math.floor(Math.random() * 16777215).toString(16);
+                return randomColor
+            }
+
 
             const data = {
                 labels: labels,
                 datasets: [{
                     label: 'Dundasprints - Incoming messages summary',
-                    backgroundColor: ['rgb(106, 255, 51)','rgb(255, 66, 51)','rgb(255, 99, 132)'],
-                    borderColor: ['rgb(106, 255, 51)', 'rgb(255,66,51)', 'rgb(255, 189, 51 )'],
+                    backgroundColor: [setBg(), setBg(), setBg()],
+                   // borderColor: ['rgb(106, 255, 51)', 'rgb(255,66,51)', 'rgb(255, 189, 51 )'],
                     data: [statusValid, statusInvalid, statusOther],
                 }]
             };
@@ -107,23 +114,29 @@
             const configDoughnut = {
                 type: 'doughnut',
                 data: data,
-                options: {}
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
             };
             const configPie = {
                 type: 'pie',
                 data: data,
-                options: {}
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
             };
 
             const myChart = new Chart(
                 document.getElementById('myChart'),
                 config
             );
-             const myChartPie = new Chart(
+            const myChartPie = new Chart(
                 document.getElementById('myChart-pie'),
                 configPie
             );
-             const myChartDoughnut = new Chart(
+            const myChartDoughnut = new Chart(
                 document.getElementById('myChart-doughnut'),
                 configDoughnut
             );
