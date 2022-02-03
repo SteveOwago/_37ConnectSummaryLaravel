@@ -22,3 +22,5 @@ Route::get('/', function () {
 
     // return view('welcome');
 });
+
+Route::get('/admin','Backend\AdminController@index');
