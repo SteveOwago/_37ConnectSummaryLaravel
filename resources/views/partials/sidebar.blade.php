@@ -41,6 +41,28 @@
                                     View Homepage
                                 </a>
                             </li>
+                            <li class="app-sidebar__heading">Reports</li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-diamond"></i>
+                                    Administration
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('admin.reports')}}" target="_blank">
+                                            <i class="metismenu-icon"></i>
+                                            Blacklisted Users
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <i class="metismenu-icon"></i>
+                                            Accounting
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="app-sidebar__heading">UI Components</li>
                             <li>
                                 <a href="#">

@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin','Backend\AdminController@index');
-Route::get('/admin/reports','Backend\AdminController@reports');
+Route::get('/admin/reports','Backend\AdminController@reports')->name('admin.reports');
 
 Route::get('generatePdf','Backend\AdminController@generatePdf')->name('generate.pdf');
 Route::get('generateCSV','Backend\AdminController@generateCSV')->name('generate.csv');

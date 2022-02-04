@@ -43,7 +43,7 @@ class AdminController extends Controller
         $title = 'Blacklisted Users'; // Report title
 
         $meta = [ // For displaying filters description on header
-            'Date' => \Carbon\Carbon::today()->format('Y-M-d'),
+            'Date' => \Carbon\Carbon::today()->format('d M Y'),
         
         ];
 
@@ -69,7 +69,7 @@ class AdminController extends Controller
             $title = 'Blacklisted Users'; // Report title
     
             $meta = [ // For displaying filters description on header
-                'Date' => \Carbon\Carbon::today()->format('Y-M-d'),
+                'Date' => \Carbon\Carbon::today()->format('d M Y'),
             
             ];
     
@@ -94,7 +94,7 @@ class AdminController extends Controller
                 $title = 'Blacklisted Users'; // Report title
         
                 $meta = [ // For displaying filters description on header
-                    'Date' => \Carbon\Carbon::today()->format('Y-M-d'),
+                    'Date' => \Carbon\Carbon::today()->format('d M Y'),
                 
                 ];
         
