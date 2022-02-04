@@ -25,4 +25,9 @@ class AdminController extends Controller
                                         'regions' => $regions, 'outgoingMessages' => $outgoingMessages
                                     ]);
     }
+
+    //Fetch reports
+    public function reports(){
+        return view('admin.dashboard');
+    }
 }

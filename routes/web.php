@@ -24,3 +24,4 @@ Route::get('/', function () {
 });
 
 Route::get('/admin','Backend\AdminController@index');
+Route::get('/admin/reports','Backend\AdminController@reports');
