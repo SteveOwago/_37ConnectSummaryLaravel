@@ -44,7 +44,7 @@
                             <li class="app-sidebar__heading">Reports</li>
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-diamond"></i>
+                                    <i class="metismenu-icon pe-7s-config"></i>
                                     Administration
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
@@ -55,10 +55,19 @@
                                             Blacklisted Users
                                         </a>
                                     </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-cash"></i>
+                                    Finance
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="{{route('admin.reports')}}" target="_blank">
                                             <i class="metismenu-icon"></i>
-                                            Accounting
+                                            CashFlow Reports
                                         </a>
                                     </li>
                                 </ul>

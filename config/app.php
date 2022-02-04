@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Jimmyjs\ReportGenerator\ServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
 
 
         /*
@@ -237,7 +239,8 @@ return [
         'CSVReport' => Jimmyjs\ReportGenerator\Facades\CSVReportFacade::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
-        
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
 
     ],
 

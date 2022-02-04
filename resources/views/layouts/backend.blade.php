@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('backend/font-awesome5-web-version/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{ asset('backend/Icon-font-7-stroke/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
     <link rel="stylesheet" href="{{ asset('backend/Icon-font-7-stroke/pe-icon-7-stroke/css/helper.css')}}">
+    @yield('css')
 </head>
 
 <body>

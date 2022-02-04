@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use PdfReport;
 use CSVReport;
 use ExcelReport;
+use DataTables;
 
 class AdminController extends Controller
 {
@@ -30,12 +31,26 @@ class AdminController extends Controller
     }
 
     //Fetch reports
-    public function reports(){
+    public function reports(Request $request){
 
         //Get List of Blacklisted Users
         $blacklists = \DB::table('blacklist')->get();
+        if ($request->ajax()) {
+            $data =  \DB::table('blacklist')->get();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+   
+                           $btn = '<button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                           class="pe-7s-trash btn-icon-wrapper"> </i></button>';
+     
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
 
-        return view('admin.reports', compact('blacklists'));
+        return view('admin.reports.blacklist_reports', compact('blacklists'));
     }
 
     public function generatePdf(){
