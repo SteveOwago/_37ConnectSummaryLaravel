@@ -28,6 +28,10 @@ class AdminController extends Controller
 
     //Fetch reports
     public function reports(){
-        return view('admin.dashboard');
+
+        //Get List of Blacklisted Users
+        $blacklists = \DB::table('blacklist')->get();
+
+        return view('admin.reports', compact('blacklists'));
     }
 }
