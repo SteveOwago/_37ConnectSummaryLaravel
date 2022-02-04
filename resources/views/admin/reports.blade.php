@@ -39,10 +39,16 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link" target="_blank">
+                                        <a href="{{route('generate.csv')}}" class="nav-link" target="_blank">
                                             <i class="nav-link-icon lnr-book"></i>
                                             <span>
                                                 EXCEL (csv)
+                                            </span>
+                                        </a>
+                                        <a href="{{route('generate.excel')}}" class="nav-link" target="_blank">
+                                            <i class="nav-link-icon lnr-book"></i>
+                                            <span>
+                                                EXCEL
                                             </span>
                                         </a>
                                     </li>
