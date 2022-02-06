@@ -72,11 +72,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="app-sidebar__heading">UI Components</li>
+                            <li class="app-sidebar__heading">User Management</li>
                             <li>
                                 <a href="#">
                                     <i class="metismenu-icon pe-7s-diamond"></i>
-                                    Elements
+                                    Roles and Permissions
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul>
