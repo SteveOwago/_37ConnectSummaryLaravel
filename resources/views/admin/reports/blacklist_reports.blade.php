@@ -78,7 +78,7 @@
                             </div> --}}
                         </div>
                         <div class="col-md-10 offset-1">
-                            <div class="table-responsive">
+                            <div class="table-responsive mt-3">
                                 <table class="align-middle mb-0 table table-borderless table-striped table-hover data-table">
                                     <thead>
                                         <tr>
